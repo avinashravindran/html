@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Resume Builder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="progress-container">
+    <div id="progressBar"></div>
+  </div>
+
+  <div class="container">
+    <form id="resumeForm">
+      <h2>Resume Builder</h2>
+      <input type="text" placeholder="Name" id="name" />
+      <input type="email" placeholder="Email" id="email" />
+      <input type="text" placeholder="Phone Number" id="phone" />
+      <textarea placeholder="Profile Summary" id="summary"></textarea>
+      
+      <div class="dynamic-section" id="educationSection">
+        <h4>Education</h4>
+        <button type="button" onclick="addEducation()">+ Add</button>
+      </div>
+
+      <div class="dynamic-section" id="experienceSection">
+        <h4>Experience</h4>
+        <button type="button" onclick="addExperience()">+ Add</button>
+      </div>
+
+      <div class="skills">
+        <h4>Skills</h4>
+        <label><input type="checkbox" value="HTML" class="skill"> HTML</label>
+        <label><input type="checkbox" value="CSS" class="skill"> CSS</label>
+        <label><input type="checkbox" value="JavaScript" class="skill"> JavaScript</label>
+      </div>
+
+      <button type="button" onclick="clearForm()">Clear Form</button>
+      <button type="button" onclick="downloadPDF()">Download PDF</button>
+    </form>
+
+    <div id="preview">
+      <h2 id="pname">Your Name</h2>
+      <p id="pemail">Email</p>
+      <p id="pphone">Phone</p>
+      <p id="psummary">Profile summary here...</p>
+      <div id="peducation"><h4>Education</h4></div>
+      <div id="pexperience"><h4>Experience</h4></div>
+      <div id="pskills"><h4>Skills</h4></div>
+    </div>
+  </div>
+
+  <script src="jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
